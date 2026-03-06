@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Dr. Shivam Kaushik - Leading orthopaedic surgeon specialising in joint replacement, sports medicine, fracture care, and spine surgery. Book your consultation today.">
+    <title>Dr. Shivam Kaushik | Orthopaedic Surgeon & Joint Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Spline 3D Viewer -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+</head>
+
+<body>
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="assets/images/logo.png" alt="Dr. Shivam Kaushik - Orthopaedic Surgeon & Joint Specialist"
+                    class="nav-logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#approach">Approach</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Book Consultation</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <!-- Static fallback image for mobile / slow connections -->
+        <div class="hero-bg-image hero-bg-fallback">
+            <img src="assets/images/hero-bg.png" alt="" aria-hidden="true">
+        </div>
+
+        <!-- Spline 3D Background -->
+        <div class="hero-spline-wrapper" id="heroSplineWrapper">
+            <div class="hero-spline-loader" id="heroSplineLoader">
+                <div class="spline-spinner"></div>
+                <span>Loading 3D Scene</span>
+            </div>
+            <spline-viewer id="heroSplineViewer" url="https://prod.spline.design/Bgc6i6rXaMfJccvC/scene.splinecode"
+                loading-anim-type="spinner-small-dark"></spline-viewer>
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge" data-animate="fade-up">
+                <span class="badge-dot"></span>
+                Orthopaedic Excellence
+            </div>
+            <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+                Restoring movement, strength<br>
+                <span class="hero-title-accent">and quality of life</span>
+            </h1>
+            <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+                Expert orthopaedic care backed by years of surgical precision
+                and a genuine commitment to getting you back on your feet.
+            </p>
+            <div class="hero-actions" data-animate="fade-up" data-delay="300">
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+            <div class="hero-stats" data-animate="fade-up" data-delay="400">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="3000">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Surgeries Performed</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="10">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="99">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Surgical Success Rate</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT / PHILOSOPHY ========== -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-left" data-animate="fade-right">
+                    <span class="section-tag">About</span>
+                    <h2 class="section-title">
+                        Your mobility<br>starts <em>with the right surgeon.</em>
+                    </h2>
+                    <p class="about-description">
+                        Dr. Shivam Kaushik is a highly skilled orthopaedic surgeon dedicated to restoring
+                        movement and eliminating pain. With advanced surgical techniques and a patient-first
+                        approach, every treatment plan is tailored to get you back to the life you love —
+                        stronger and more confident than before.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Advanced Surgical Techniques</h4>
+                                <p>Minimally invasive procedures for faster recovery and better outcomes</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Patient-Centred Recovery</h4>
+                                <p>Personalised rehabilitation plans to get you moving again</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Comprehensive Bone & Joint Care</h4>
+                                <p>From diagnosis to post-operative care, all under one roof</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-right" data-animate="fade-left">
+                    <div class="about-image-stack">
+                        <div class="about-img-main">
+                            <img src="assets/images/doctor-portrait.png" alt="Dr. Shivam Kaushik" loading="lazy">
+                        </div>
+                        <div class="about-img-accent">
+                            <img src="assets/images/clinic-interior.png" alt="Modern clinic interior" loading="lazy">
+                        </div>
+                        <div class="about-floating-card">
+                            <span class="floating-card-icon">🦴</span>
+                            <span class="floating-card-text">Expert Bone<br>& Joint Care</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Services</span>
+                <h2 class="section-title">
+                    Specialised orthopaedic care<br>for <em>every joint & bone.</em>
+                </h2>
+                <p class="section-subtitle">From fractures to full joint replacements — expert surgical solutions for
+                    all musculoskeletal conditions.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-animate="fade-up" data-delay="0">
+                    <div class="service-image">
+                        <img src="assets/images/service-joint-replacement.png" alt="Joint Replacement Surgery"
+                            loading="lazy">
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-number">01</div>
+                        <h3>Joint Replacement Surgery</h3>
+                        <p>Total and partial knee & hip replacements using the latest implant technology for lasting
+                            pain relief and mobility.</p>
+                        <a href="#contact" class="service-link">
+                            Learn more
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="100">
+                    <div class="service-image">
+                        <img src="assets/images/service-sports-medicine.png" alt="Sports Medicine & Arthroscopy"
+                            loading="lazy">
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-number">02</div>
+                        <h3>Sports Medicine & Arthroscopy</h3>
+                        <p>Minimally invasive arthroscopic surgery for ACL tears, meniscus injuries, rotator cuff
+                            repairs, and sports injuries.</p>
+                        <a href="#contact" class="service-link">
+                            Learn more
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="200">
+                    <div class="service-image">
+                        <img src="assets/images/service-fracture-trauma.png" alt="Fracture & Trauma Care"
+                            loading="lazy">
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-number">03</div>
+                        <h3>Fracture & Trauma Care</h3>
+                        <p>Emergency and elective fracture management with internal fixation, plating, and advanced
+                            trauma reconstruction.</p>
+                        <a href="#contact" class="service-link">
+                            Learn more
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="300">
+                    <div class="service-image">
+                        <img src="assets/images/service-spine-surgery.png" alt="Spine & Deformity Correction"
+                            loading="lazy">
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-number">04</div>
+                        <h3>Spine & Deformity Correction</h3>
+                        <p>Surgical and non-surgical treatment for disc herniation, spinal stenosis, scoliosis, and
+                            degenerative spine conditions.</p>
+                        <a href="#contact" class="service-link">
+                            Learn more
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== APPROACH / PROCESS ========== -->
+    <section class="approach-section" id="approach">
+        <div class="container">
+            <div class="approach-grid">
+                <div class="approach-left" data-animate="fade-right">
+                    <div class="approach-image-wrapper">
+                        <img src="assets/images/wellness-treatment.png" alt="Natural wellness treatments"
+                            loading="lazy">
+                        <!-- Spline 3D Container for approach section -->
+                        <div class="spline-container approach-spline" id="approachSpline">
+                            <!-- Add <spline-viewer> here for 3D model overlay -->
+                        </div>
+                    </div>
+                </div>
+                <div class="approach-right" data-animate="fade-left">
+                    <span class="section-tag">Our Approach</span>
+                    <h2 class="section-title">
+                        Most surgeries need precision.<br>
+                        <em>Ours deliver results.</em>
+                    </h2>
+                    <div class="approach-steps">
+                        <div class="approach-step">
+                            <div class="step-marker">
+                                <span>1</span>
+                                <div class="step-line"></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>Diagnosis & Imaging</h4>
+                                <p>Thorough clinical examination with X-rays, MRI, and CT scans to accurately identify
+                                    the problem.</p>
+                            </div>
+                        </div>
+                        <div class="approach-step">
+                            <div class="step-marker">
+                                <span>2</span>
+                                <div class="step-line"></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>Surgical Treatment</h4>
+                                <p>Precision surgery using minimally invasive techniques, computer-assisted navigation,
+                                    and premium implants.</p>
+                            </div>
+                        </div>
+                        <div class="approach-step">
+                            <div class="step-marker">
+                                <span>3</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Rehabilitation & Recovery</h4>
+                                <p>Structured physiotherapy and follow-up care to restore full strength, mobility, and
+                                    confidence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== IMPACT / SCIENCE SECTION ========== -->
+    <section class="impact-section" id="impact">
+        <div class="impact-bg">
+            <!-- Spline 3D Container for impact section (full-width 3D background) -->
+            <div class="spline-container impact-spline" id="impactSpline">
+                <!-- Add <spline-viewer> here for anatomical 3D model -->
+            </div>
+        </div>
+        <div class="container">
+            <div class="impact-content" data-animate="fade-up">
+                <span class="section-tag section-tag-light">Science Driven</span>
+                <h2 class="impact-title">
+                    You deserve more than<br><em>living with pain.</em>
+                </h2>
+                <p class="impact-description">
+                    Every surgical plan is built on precise diagnostics, cutting-edge implant technology,
+                    and a deep understanding of human biomechanics. We go beyond pain management —
+                    we restore the movement and freedom your body was designed for.
+                </p>
+                <div class="impact-metrics">
+                    <div class="metric">
+                        <span class="metric-value">3,000+</span>
+                        <span class="metric-label">Successful Surgeries</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">8</span>
+                        <span class="metric-label">Subspecialties</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">99%</span>
+                        <span class="metric-label">Surgical Success Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRANSFORMATIONS / SOCIAL PROOF ========== -->
+    <section class="transformations-section" id="transformations">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Results</span>
+                <h2 class="section-title section-title-center">
+                    Over 3,000 patients<br>back on their feet <em>(and counting).</em>
+                </h2>
+            </div>
+            <div class="transformation-gallery" data-animate="fade-up" data-delay="200">
+                <div class="gallery-item gallery-item-wide">
+                    <img src="assets/images/patient-consultation.png" alt="Patient consultation" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span>Personalized Consultations</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/clinic-interior.png" alt="Modern clinic facility" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span>Modern Facility</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/wellness-treatment.png" alt="Wellness treatments" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span>Natural Wellness</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title section-title-center">
+                    Stories from patients,<br>advocates, and<br><em>mentors like you.</em>
+                </h2>
+            </div>
+            <div class="testimonials-carousel">
+                <div class="testimonial-card" data-animate="fade-up" data-delay="0">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <blockquote>
+                        "After my total knee replacement by Dr. Shivam, I'm walking without
+                        pain for the first time in 8 years. His surgical skill and the care
+                        his team provided during recovery was truly outstanding."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div>
+                            <span class="author-name">Rajesh Sharma</span>
+                            <span class="author-title">Knee Replacement Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate="fade-up" data-delay="100">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <blockquote>
+                        "I tore my ACL during a cricket match and was devastated. Dr. Kaushik
+                        performed arthroscopic surgery and within 6 months I was back on the
+                        pitch. He gave me my sport back."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div>
+                            <span class="author-name">Priya Mehta</span>
+                            <span class="author-title">Sports Injury Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate="fade-up" data-delay="200">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <blockquote>
+                        "My mother had a complex hip fracture at age 72. Dr. Shivam operated
+                        the same day and she was walking with a frame within 48 hours.
+                        His expertise in trauma care is exceptional."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div>
+                            <span class="author-name">Ankit Verma</span>
+                            <span class="author-title">Family of Trauma Patient</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA / CONTACT ========== -->
+    <section class="contact-section" id="contact">
+        <div class="contact-bg-text" aria-hidden="true">Move Freely</div>
+        <!-- Spline 3D Container for contact section -->
+        <div class="spline-container contact-spline" id="contactSpline">
+            <!-- Add <spline-viewer> here for decorative 3D element -->
+        </div>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info" data-animate="fade-right">
+                    <span class="section-tag section-tag-light">Get in Touch</span>
+                    <h2 class="contact-title">
+                        Begin your wellness<br>journey <em>today.</em>
+                    </h2>
+                    <p class="contact-description">
+                        Ready to take the first step towards a pain-free life?
+                        Schedule a consultation with Dr. Shivam Kaushik and discover
+                        surgical expertise you can trust.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <div>
+                                <h4>Clinic Address</h4>
+                                <p>123 Wellness Avenue, Medical District<br>New Delhi, India 110001</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: By Appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper" data-animate="fade-left">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Book a Consultation</h3>
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="joint-replacement">Joint Replacement Surgery</option>
+                                <option value="sports-medicine">Sports Medicine & Arthroscopy</option>
+                                <option value="fracture-trauma">Fracture & Trauma Care</option>
+                                <option value="spine">Spine & Deformity Correction</option>
+                                <option value="consultation">General Orthopaedic Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="Describe your condition or injury..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                            Schedule Appointment
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo footer-logo">
+                        <img src="assets/images/logo.png"
+                            alt="Dr. Shivam Kaushik - Orthopaedic Surgeon & Joint Specialist" class="footer-logo-img">
+                    </a>
+                    <p>Expert orthopaedic surgery backed by precision, compassion, and innovation. Your journey to
+                        pain-free movement starts here.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#approach">Our Approach</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Joint Replacement</a></li>
+                        <li><a href="#services">Sports Medicine</a></li>
+                        <li><a href="#services">Fracture & Trauma</a></li>
+                        <li><a href="#services">Spine Surgery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Shivam Kaushik. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
