@@ -1,0 +1,9 @@
+{
+  "name": "dr-shivam-website",
+  "version": "1.0.0",
+  "description": "Website for Dr. Shivam Kaushik",
+  "main": "index.js",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.3"
+  }
+}

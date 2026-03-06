@@ -205,7 +205,7 @@ function initContactForm() {
 
     if (!form) return;
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         // Visual feedback
@@ -219,8 +219,33 @@ function initContactForm() {
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.7';
 
-        // Simulate submission (replace with real API call)
-        setTimeout(() => {
+        // Extract form data
+        const formData = new FormData(form);
+        const data = {
+            fullName: formData.get('fullName'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            service: formData.get('service'),
+            message: formData.get('message')
+        };
+
+        try {
+            // Send request to Vercel Serverless Function
+            const response = await fetch('/api/appointment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || 'Failed to request appointment');
+            }
+
+            // Success feedback
             submitBtn.innerHTML = `
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="20 6 9 17 4 12"/>
@@ -236,7 +261,28 @@ function initContactForm() {
                 submitBtn.disabled = false;
                 submitBtn.style.background = '';
             }, 3000);
-        }, 1500);
+
+        } catch (error) {
+            console.error('Submission error:', error);
+
+            // Error feedback
+            submitBtn.innerHTML = `
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                Error - Try Again
+            `;
+            submitBtn.style.background = '#e74c3c';
+            submitBtn.style.opacity = '1';
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+            }, 3000);
+        }
     });
 }
 
