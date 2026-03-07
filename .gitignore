@@ -1,0 +1,15 @@
+# Dependencies — Vercel installs these itself
+node_modules/
+
+# Environment variables — NEVER commit secrets
+.env
+.env.local
+.env.production
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.suo
