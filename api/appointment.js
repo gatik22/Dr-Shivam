@@ -10,7 +10,7 @@ if (supabaseUrl && supabaseKey) {
     supabase = createClient(supabaseUrl, supabaseKey);
 }
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     // Enable CORS for development
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Origin', '*');
