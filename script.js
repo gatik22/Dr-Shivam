@@ -263,7 +263,7 @@ function initContactForm() {
             }, 3000);
 
         } catch (error) {
-            console.error('Submission error:', error);
+            console.error('Submission error details:', error.message);
 
             // Error feedback
             submitBtn.innerHTML = `
@@ -276,6 +276,9 @@ function initContactForm() {
             `;
             submitBtn.style.background = '#e74c3c';
             submitBtn.style.opacity = '1';
+
+            // Show exact error in console for debugging
+            console.error('Full error:', error);
 
             setTimeout(() => {
                 submitBtn.innerHTML = originalText;

@@ -58,7 +58,10 @@ module.exports = async function handler(req, res) {
         if (error) {
             console.error('Supabase insert error:', JSON.stringify(error, null, 2));
             return res.status(500).json({
-                error: 'Database error: ' + (error.message || 'Failed to save appointment.')
+                error: 'Database error: ' + (error.message || 'Unknown error'),
+                code: error.code,
+                hint: error.hint,
+                details: error.details
             });
         }
 
