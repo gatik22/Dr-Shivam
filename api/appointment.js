@@ -1,70 +1,78 @@
 const { createClient } = require('@supabase/supabase-js');
 
-// Initialize Supabase client
-// These variables must be set in your Vercel Dashboard -> Settings -> Environment Variables
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_ANON_KEY;
-
-let supabase;
-if (supabaseUrl && supabaseKey) {
-    supabase = createClient(supabaseUrl, supabaseKey);
-}
-
 module.exports = async function handler(req, res) {
-    // Enable CORS for development
+    // ── CORS Headers ──
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-    res.setHeader(
-        'Access-Control-Allow-Headers',
-        'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-    );
+    res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-    // Handle preflight request
+    // Handle preflight (browser sends this before the real POST)
     if (req.method === 'OPTIONS') {
-        res.status(200).end();
-        return;
+        return res.status(200).end();
     }
 
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method Not Allowed' });
     }
 
+    // ── Check environment variables first ──
+    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || !supabaseKey) {
+        console.error('Missing Supabase env vars:', { supabaseUrl: !!supabaseUrl, supabaseKey: !!supabaseKey });
+        return res.status(500).json({
+            error: 'Server configuration error. SUPABASE_URL and SUPABASE_ANON_KEY must be set in Vercel Environment Variables.'
+        });
+    }
+
+    // ── Initialize Supabase client inside handler (safe for serverless) ──
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
     try {
         const { fullName, email, phone, service, message } = req.body;
 
-        // Basic validation
-        if (!fullName || !email) {
-            return res.status(400).json({ error: 'Name and email are required.' });
+        // ── Validate required fields ──
+        if (!fullName || !fullName.trim()) {
+            return res.status(400).json({ error: 'Full name is required.' });
+        }
+        if (!email || !email.trim()) {
+            return res.status(400).json({ error: 'Email address is required.' });
         }
 
-        if (!supabase) {
+        console.log('Inserting appointment for:', fullName, email);
+
+        // ── Insert into Supabase — chain .select() so we get the row back ──
+        const { data, error } = await supabase
+            .from('appointments')
+            .insert([{
+                full_name: fullName.trim(),
+                email: email.trim(),
+                phone: phone ? phone.trim() : null,
+                service: service || null,
+                message: message ? message.trim() : null
+            }])
+            .select();
+
+        if (error) {
+            console.error('Supabase insert error:', JSON.stringify(error, null, 2));
             return res.status(500).json({
-                error: 'Supabase configuration is missing. Ensure SUPABASE_URL and SUPABASE_ANON_KEY are set in Vercel.'
+                error: 'Database error: ' + (error.message || 'Failed to save appointment.')
             });
         }
 
-        // Insert data into Supabase
-        const { data, error } = await supabase
-            .from('appointments')
-            .insert([
-                {
-                    full_name: fullName,
-                    email: email,
-                    phone: phone,
-                    service: service,
-                    message: message
-                }
-            ]);
+        console.log('Appointment saved successfully:', data);
+        return res.status(200).json({
+            success: true,
+            message: 'Appointment requested successfully.',
+            id: data[0]?.id
+        });
 
-        if (error) {
-            console.error('Supabase DB error:', error);
-            throw error;
-        }
-
-        return res.status(200).json({ success: true, message: 'Appointment requested successfully.', data });
-    } catch (error) {
-        console.error('Server error:', error);
-        return res.status(500).json({ error: 'Failed to save appointment. Please try again later.' });
+    } catch (err) {
+        console.error('Unexpected server error:', err);
+        return res.status(500).json({
+            error: 'An unexpected error occurred. Please try again later.'
+        });
     }
-}
+};
